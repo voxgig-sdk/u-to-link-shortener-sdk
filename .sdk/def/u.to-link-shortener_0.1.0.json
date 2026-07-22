@@ -1,0 +1,137 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "u.to Link Shortener",
+    "description": "The u.to API provides a simple and efficient way to shorten any URL into a concise link. It enables users to create short links with minimal latency, improving the sharing experience.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/uto"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://u.to/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/shorten/": {
+      "post": {
+        "summary": "Create short link",
+        "description": "Shorten any URL into a concise u.to link with minimal latency",
+        "operationId": "getShortenedLink",
+        "tags": [
+          "Link Shortening"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "url"
+                ],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "The URL to be shortened",
+                    "example": "http://tvs.tv"
+                  }
+                }
+              },
+              "examples": {
+                "basic": {
+                  "summary": "Basic URL shortening",
+                  "value": {
+                    "url": "http://tvs.tv"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully shortened the URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "short_link": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "The shortened URL",
+                      "example": "https://u.to/abc123"
+                    },
+                    "original_url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "The original URL that was shortened",
+                      "example": "http://tvs.tv"
+                    }
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "summary": "Successful shortening",
+                    "value": {
+                      "short_link": "https://u.to/abc123",
+                      "original_url": "http://tvs.tv"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid URL provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message",
+                      "example": "Invalid URL format"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message",
+                      "example": "Server error occurred"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Link Shortening",
+      "description": "Operations for shortening URLs"
+    }
+  ],
+  "externalDocs": {
+    "description": "GitHub Repository and Documentation",
+    "url": "https://github.com/l0v3m0n3y/uto"
+  }
+}

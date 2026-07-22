@@ -1,0 +1,67 @@
+<?php
+declare(strict_types=1);
+
+// UToLinkShortener SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+UToLinkShortenerUtility::setRegistrar(function (UToLinkShortenerUtility $u): void {
+    $u->clean = [UToLinkShortenerClean::class, 'call'];
+    $u->done = [UToLinkShortenerDone::class, 'call'];
+    $u->make_error = [UToLinkShortenerMakeError::class, 'call'];
+    $u->feature_add = [UToLinkShortenerFeatureAdd::class, 'call'];
+    $u->feature_hook = [UToLinkShortenerFeatureHook::class, 'call'];
+    $u->feature_init = [UToLinkShortenerFeatureInit::class, 'call'];
+    $u->fetcher = [UToLinkShortenerFetcher::class, 'call'];
+    $u->make_fetch_def = [UToLinkShortenerMakeFetchDef::class, 'call'];
+    $u->make_context = [UToLinkShortenerMakeContext::class, 'call'];
+    $u->make_options = [UToLinkShortenerMakeOptions::class, 'call'];
+    $u->make_request = [UToLinkShortenerMakeRequest::class, 'call'];
+    $u->make_response = [UToLinkShortenerMakeResponse::class, 'call'];
+    $u->make_result = [UToLinkShortenerMakeResult::class, 'call'];
+    $u->make_point = [UToLinkShortenerMakePoint::class, 'call'];
+    $u->make_spec = [UToLinkShortenerMakeSpec::class, 'call'];
+    $u->make_url = [UToLinkShortenerMakeUrl::class, 'call'];
+    $u->param = [UToLinkShortenerParam::class, 'call'];
+    $u->prepare_auth = [UToLinkShortenerPrepareAuth::class, 'call'];
+    $u->prepare_body = [UToLinkShortenerPrepareBody::class, 'call'];
+    $u->prepare_headers = [UToLinkShortenerPrepareHeaders::class, 'call'];
+    $u->prepare_method = [UToLinkShortenerPrepareMethod::class, 'call'];
+    $u->prepare_params = [UToLinkShortenerPrepareParams::class, 'call'];
+    $u->prepare_path = [UToLinkShortenerPreparePath::class, 'call'];
+    $u->prepare_query = [UToLinkShortenerPrepareQuery::class, 'call'];
+    $u->result_basic = [UToLinkShortenerResultBasic::class, 'call'];
+    $u->result_body = [UToLinkShortenerResultBody::class, 'call'];
+    $u->result_headers = [UToLinkShortenerResultHeaders::class, 'call'];
+    $u->transform_request = [UToLinkShortenerTransformRequest::class, 'call'];
+    $u->transform_response = [UToLinkShortenerTransformResponse::class, 'call'];
+});

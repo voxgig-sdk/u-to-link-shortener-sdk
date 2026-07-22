@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://github.com/l0v3m0n3y/uto"
+      }
+      description: "The u.to API provides a simple and efficient way to shorten any URL into a concise link. It enables users to create short links with minimal latency, improving the sharing experience."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://u.to/api"
+        }
+      ]
+      summary: "The u.to API provides a simple and efficient way to shorten any URL into a concise link."
+      title: "u.to Link Shortener"
+      version: "1.0.0"
+      website: "https://github.com/l0v3m0n3y/uto"
+    }
+  }
+}
+

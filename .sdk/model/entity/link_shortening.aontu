@@ -1,0 +1,47 @@
+# Entity: link_shortening
+
+main: kit: entity: link_shortening: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "original_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "short_link"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "link_shortening"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/shorten/"
+          parts: [
+            "shorten"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

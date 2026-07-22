@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "link_shortening": {
+      "LINK_SHORTENING00": {
+        "original_url": "s1e",
+        "short_link": "s1f",
+        "url": "s20",
+        "id": "LINK_SHORTENING00"
+      },
+      "LINK_SHORTENING01": {
+        "original_url": "s3c",
+        "short_link": "s3d",
+        "url": "s3e",
+        "id": "LINK_SHORTENING01"
+      },
+      "LINK_SHORTENING02": {
+        "original_url": "s5a",
+        "short_link": "s5b",
+        "url": "s5c",
+        "id": "LINK_SHORTENING02"
+      }
+    }
+  },
+  "new": {
+    "link_shortening": {
+      "link_shortening_ref01": {
+        "original_url": "s78",
+        "short_link": "s79",
+        "url": "s7a"
+      }
+    }
+  }
+}
