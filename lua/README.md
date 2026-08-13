@@ -213,9 +213,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local link_shortening, err = client:LinkShortening():load()
+    local link_shortening, err = client:LinkShortening():list()
     if err then error(err) end
-    -- link_shortening is the loaded record
+    -- link_shortening is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.

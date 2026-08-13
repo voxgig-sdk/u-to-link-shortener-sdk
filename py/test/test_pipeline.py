@@ -16,11 +16,11 @@
 import pytest
 
 from utolinkshortener_sdk import UToLinkShortenerSDK
-from core.error import UToLinkShortenerError
-from core.result import UToLinkShortenerResult
-from core.response import UToLinkShortenerResponse
-from core.spec import UToLinkShortenerSpec
-from feature.base_feature import UToLinkShortenerBaseFeature
+from utolinkshortener_sdk.core.error import UToLinkShortenerError
+from utolinkshortener_sdk.core.result import UToLinkShortenerResult
+from utolinkshortener_sdk.core.response import UToLinkShortenerResponse
+from utolinkshortener_sdk.core.spec import UToLinkShortenerSpec
+from utolinkshortener_sdk.feature.base_feature import UToLinkShortenerBaseFeature
 
 
 def _client():

@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ UToLinkShortenerUtility.registrar = ->(u) {
   u.prepare_params = UToLinkShortenerUtilities::PrepareParams
   u.prepare_path = UToLinkShortenerUtilities::PreparePath
   u.prepare_query = UToLinkShortenerUtilities::PrepareQuery
+  u.graphql_body = UToLinkShortenerUtilities::GraphqlBody
+  u.graphql_errors = UToLinkShortenerUtilities::GraphqlErrors
   u.result_basic = UToLinkShortenerUtilities::ResultBasic
   u.result_body = UToLinkShortenerUtilities::ResultBody
   u.result_headers = UToLinkShortenerUtilities::ResultHeaders

@@ -56,6 +56,7 @@ module UToLinkShortenerConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "POST",
                   "orig" => "/shorten/",
                   "parts" => [

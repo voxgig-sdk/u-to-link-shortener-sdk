@@ -62,8 +62,8 @@ function makeCtrl(explain: boolean) {
 // Overrides configuration values with environment variables if available
 function envOverride(m: Record<string, any>) {
   if (
-    'TRUE' === process.env.UTOLINKSHORTENER_TEST_LIVE ||
-    'TRUE' === process.env.UTOLINKSHORTENER_TEST_OVERRIDE
+    'TRUE' === process.env.U_TO_LINK_SHORTENER_TEST_LIVE ||
+    'TRUE' === process.env.U_TO_LINK_SHORTENER_TEST_OVERRIDE
   ) {
     Object.entries(m).map(n => {
       let envval = process.env[n[0]]
@@ -74,7 +74,7 @@ function envOverride(m: Record<string, any>) {
     })
   }
 
-  m.UTOLINKSHORTENER_TEST_EXPLAIN = process.env.UTOLINKSHORTENER_TEST_EXPLAIN || m.UTOLINKSHORTENER_TEST_EXPLAIN
+  m.U_TO_LINK_SHORTENER_TEST_EXPLAIN = process.env.U_TO_LINK_SHORTENER_TEST_EXPLAIN || m.U_TO_LINK_SHORTENER_TEST_EXPLAIN
 
   return m
 }

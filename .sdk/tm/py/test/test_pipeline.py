@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import UToLinkShortenerSDK
-from core.error import UToLinkShortenerError
-from core.result import UToLinkShortenerResult
-from core.response import UToLinkShortenerResponse
-from core.spec import UToLinkShortenerSpec
-from feature.base_feature import UToLinkShortenerBaseFeature
+from projectname_sdk.core.error import UToLinkShortenerError
+from projectname_sdk.core.result import UToLinkShortenerResult
+from projectname_sdk.core.response import UToLinkShortenerResponse
+from projectname_sdk.core.spec import UToLinkShortenerSpec
+from projectname_sdk.feature.base_feature import UToLinkShortenerBaseFeature
 
 
 def _client():

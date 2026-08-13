@@ -36,7 +36,7 @@ const client = new UToLinkShortenerSDK()
 ### 4. Create, update, and remove
 
 ```ts
-// Create — returns the created LinkShortening
+// Create — returns the created LinkShortening ENTITY (.data() for the record)
 const created = await client.LinkShortening().create({
   url: 'example_url',
 })
@@ -118,7 +118,8 @@ Create a mock client for unit testing — no server required:
 const client = UToLinkShortenerSDK.test()
 
 const linkshortening = await client.LinkShortening().create({ url: 'example_url' })
-// linkshortening is a bare entity populated with mock response data
+// linkshortening is the entity, populated with mock response data
+// — call linkshortening.data() for the record itself
 console.log(linkshortening)
 ```
 

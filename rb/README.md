@@ -33,7 +33,7 @@ client = UToLinkShortenerSDK.new
 ### 4. Create, update, and remove
 
 ```ruby
-# create returns the bare created LinkShortening record.
+# create returns the ENTITY — call data_get for the created LinkShortening record.
 created = client.LinkShortening.create({ "url" => "example_url" })
 
 ```
@@ -113,7 +113,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = UToLinkShortenerSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 linkshortening = client.LinkShortening.create({ "url" => "example" })
 puts linkshortening
 ```

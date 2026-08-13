@@ -23,8 +23,8 @@ module UToLinkShortenerTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("UTOLINKSHORTENER_TEST_LIVE")
-    override = getenv("UTOLINKSHORTENER_TEST_OVERRIDE")
+    live = getenv("U_TO_LINK_SHORTENER_TEST_LIVE")
+    override = getenv("U_TO_LINK_SHORTENER_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module UToLinkShortenerTestRunner
       end
     end
 
-    explain = getenv("UTOLINKSHORTENER_TEST_EXPLAIN")
-    m["UTOLINKSHORTENER_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("U_TO_LINK_SHORTENER_TEST_EXPLAIN")
+    m["U_TO_LINK_SHORTENER_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import UToLinkShortenerControl
-from core.error import UToLinkShortenerError
-from core.result import UToLinkShortenerResult
-from core.spec import UToLinkShortenerSpec
+from utolinkshortener_sdk.config import make_config
+from utolinkshortener_sdk.features import _make_feature
+from utolinkshortener_sdk.core.control import UToLinkShortenerControl
+from utolinkshortener_sdk.core.error import UToLinkShortenerError
+from utolinkshortener_sdk.core.result import UToLinkShortenerResult
+from utolinkshortener_sdk.core.spec import UToLinkShortenerSpec
 
 
 # True when this SDK was generated with the named feature.

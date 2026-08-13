@@ -26,8 +26,8 @@ import {
 describe('LinkShorteningEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when UTOLINKSHORTENER_TEST_LIVE=TRUE.
-  afterEach(liveDelay('UTOLINKSHORTENER_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when U_TO_LINK_SHORTENER_TEST_LIVE=TRUE.
+  afterEach(liveDelay('U_TO_LINK_SHORTENER_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = UToLinkShortenerSDK.test()
@@ -62,7 +62,7 @@ describe('LinkShorteningEntity', async () => {
     const link_shortening_ref01_ent = client.LinkShortening()
     let link_shortening_ref01_data = setup.data.new.link_shortening['link_shortening_ref01']
 
-    link_shortening_ref01_data = await link_shortening_ref01_ent.create(link_shortening_ref01_data)
+    link_shortening_ref01_data = (await link_shortening_ref01_ent.create(link_shortening_ref01_data)).data()
     assert(null != link_shortening_ref01_data)
 
 

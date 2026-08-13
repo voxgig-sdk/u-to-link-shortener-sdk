@@ -43,8 +43,8 @@ class UToLinkShortenerTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('UTOLINKSHORTENER_TEST_LIVE');
-        $override = self::getenv('UTOLINKSHORTENER_TEST_OVERRIDE');
+        $live = self::getenv('U_TO_LINK_SHORTENER_TEST_LIVE');
+        $override = self::getenv('U_TO_LINK_SHORTENER_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class UToLinkShortenerTestRunner
             }
         }
 
-        $explain = self::getenv('UTOLINKSHORTENER_TEST_EXPLAIN');
+        $explain = self::getenv('U_TO_LINK_SHORTENER_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['UTOLINKSHORTENER_TEST_EXPLAIN'] = $explain;
+            $m['U_TO_LINK_SHORTENER_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

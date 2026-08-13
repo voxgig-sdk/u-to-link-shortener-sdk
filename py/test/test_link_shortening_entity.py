@@ -6,9 +6,9 @@ import time
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from utolinkshortener_sdk.utility.voxgig_struct import voxgig_struct as vs
 from utolinkshortener_sdk import UToLinkShortenerSDK
-from core import helpers
+from utolinkshortener_sdk.core import helpers
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 from test import runner
@@ -36,7 +36,7 @@ class TestLinkShorteningEntity:
         # without an *_ENTID env override, those IDs hit the live API and 4xx.
         if setup.get("synthetic_only"):
             pytest.skip("live entity test uses synthetic IDs from fixture — "
-                        "set UTOLINKSHORTENER_TEST_LINK_SHORTENING_ENTID JSON to run live")
+                        "set U_TO_LINK_SHORTENER_TEST_LINK_SHORTENING_ENTID JSON to run live")
         client = setup["client"]
 
         # CREATE
@@ -44,7 +44,7 @@ class TestLinkShorteningEntity:
         link_shortening_ref01_data = helpers.to_map(vs.getprop(
             vs.getpath(setup["data"], "new.link_shortening"), "link_shortening_ref01"))
 
-        link_shortening_ref01_data = helpers.to_map(link_shortening_ref01_ent.create(link_shortening_ref01_data, None))
+        link_shortening_ref01_data = helpers.to_map(runner.entity_data(link_shortening_ref01_ent.create(link_shortening_ref01_data, None)))
         assert link_shortening_ref01_data is not None
 
 
@@ -78,21 +78,21 @@ def _link_shortening_basic_setup(extra):
     # mode is on without a real override, the basic test runs against synthetic
     # IDs from the fixture and 4xx's. We surface this so the test can skip.
     _entid_env_raw = os.environ.get(
-        "UTOLINKSHORTENER_TEST_LINK_SHORTENING_ENTID")
+        "U_TO_LINK_SHORTENER_TEST_LINK_SHORTENING_ENTID")
     _idmap_overridden = _entid_env_raw is not None and _entid_env_raw.strip().startswith("{")
 
     env = runner.env_override({
-        "UTOLINKSHORTENER_TEST_LINK_SHORTENING_ENTID": idmap,
-        "UTOLINKSHORTENER_TEST_LIVE": "FALSE",
-        "UTOLINKSHORTENER_TEST_EXPLAIN": "FALSE",
+        "U_TO_LINK_SHORTENER_TEST_LINK_SHORTENING_ENTID": idmap,
+        "U_TO_LINK_SHORTENER_TEST_LIVE": "FALSE",
+        "U_TO_LINK_SHORTENER_TEST_EXPLAIN": "FALSE",
     })
 
     idmap_resolved = helpers.to_map(
-        env.get("UTOLINKSHORTENER_TEST_LINK_SHORTENING_ENTID"))
+        env.get("U_TO_LINK_SHORTENER_TEST_LINK_SHORTENING_ENTID"))
     if idmap_resolved is None:
         idmap_resolved = helpers.to_map(idmap)
 
-    if env.get("UTOLINKSHORTENER_TEST_LIVE") == "TRUE":
+    if env.get("U_TO_LINK_SHORTENER_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
             },
@@ -100,13 +100,13 @@ def _link_shortening_basic_setup(extra):
         ])
         client = UToLinkShortenerSDK(helpers.to_map(merged_opts))
 
-    _live = env.get("UTOLINKSHORTENER_TEST_LIVE") == "TRUE"
+    _live = env.get("U_TO_LINK_SHORTENER_TEST_LIVE") == "TRUE"
     return {
         "client": client,
         "data": entity_data,
         "idmap": idmap_resolved,
         "env": env,
-        "explain": env.get("UTOLINKSHORTENER_TEST_EXPLAIN") == "TRUE",
+        "explain": env.get("U_TO_LINK_SHORTENER_TEST_EXPLAIN") == "TRUE",
         "live": _live,
         "synthetic_only": _live and not _idmap_overridden,
         "now": int(time.time() * 1000),

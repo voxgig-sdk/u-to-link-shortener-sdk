@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# UToLinkShortener SDK exists test
 
 import pytest
 from utolinkshortener_sdk import UToLinkShortenerSDK
