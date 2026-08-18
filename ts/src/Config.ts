@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://u.to/api',
+    base: "https://u.to/api",
 
     headers: {
       "content-type": "application/json"
@@ -55,25 +55,17 @@ class Config {
     "link_shortening": {
       "fields": [
         {
-          "active": true,
           "name": "original_url",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "short_link",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "url",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         }
       ],
       "name": "link_shortening",
@@ -83,7 +75,6 @@ class Config {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "POST",
@@ -95,11 +86,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {

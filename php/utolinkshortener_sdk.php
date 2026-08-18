@@ -40,7 +40,7 @@ class UToLinkShortenerSDK
         $utility = new UToLinkShortenerUtility();
         $this->_utility = $utility;
 
-        $config = UToLinkShortenerConfig::make_config();
+        $config = UToLinkShortenerConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

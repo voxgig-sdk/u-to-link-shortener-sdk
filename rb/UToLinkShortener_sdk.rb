@@ -28,7 +28,7 @@ class UToLinkShortenerSDK
     utility = UToLinkShortenerUtility.new
     @_utility = utility
 
-    config = UToLinkShortenerConfig.make_config
+    config = UToLinkShortenerConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

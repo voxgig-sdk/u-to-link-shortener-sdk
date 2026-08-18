@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from utolinkshortener_sdk.config import make_config
+from utolinkshortener_sdk.config import shared_config
 from utolinkshortener_sdk.features import _make_feature
 from utolinkshortener_sdk.core.control import UToLinkShortenerControl
 from utolinkshortener_sdk.core.error import UToLinkShortenerError
@@ -24,7 +24,7 @@ from utolinkshortener_sdk.core.spec import UToLinkShortenerSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

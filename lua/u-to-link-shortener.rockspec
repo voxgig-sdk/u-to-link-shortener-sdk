@@ -23,6 +23,7 @@ build = {
   modules = {
     ["u-to-link-shortener_sdk"] = "u-to-link-shortener_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }
