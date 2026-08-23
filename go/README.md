@@ -6,7 +6,7 @@ The Golang SDK for the UToLinkShortener API — an entity-oriented client using 
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.LinkShortening(nil)` — each with the same small set of operations (`Create`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,9 +258,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"original_url"` |  |
-| `"short_link"` |  |
-| `"url"` |  |
+| `"original_url"` | The original URL that was shortened |
+| `"short_link"` | The shortened URL |
+| `"url"` | The URL to be shortened |
 
 Operations: Create.
 
@@ -285,9 +285,9 @@ Create an instance: `linkShortening := client.LinkShortening(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `original_url` | `string` |  |
-| `short_link` | `string` |  |
-| `url` | `string` |  |
+| `original_url` | `string` | The original URL that was shortened |
+| `short_link` | `string` | The shortened URL |
+| `url` | `string` | The URL to be shortened |
 
 #### Example: Create
 

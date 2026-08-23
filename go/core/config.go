@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "UToLinkShortener",
+			"slug": "u-to-link-shortener",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,15 +36,18 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "original_url",
+						"short": "The original URL that was shortened",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "short_link",
+						"short": "The shortened URL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
 						"req": true,
+						"short": "The URL to be shortened",
 						"type": "`$STRING`",
 					},
 				},

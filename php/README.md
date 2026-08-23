@@ -241,9 +241,9 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `original_url` |  |
-| `short_link` |  |
-| `url` |  |
+| `original_url` | The original URL that was shortened |
+| `short_link` | The shortened URL |
+| `url` | The URL to be shortened |
 
 Operations: Create.
 
@@ -268,9 +268,9 @@ Create an instance: `$link_shortening = $client->LinkShortening();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `original_url` | `string` |  |
-| `short_link` | `string` |  |
-| `url` | `string` |  |
+| `original_url` | `string` | The original URL that was shortened |
+| `short_link` | `string` | The shortened URL |
+| `url` | `string` | The URL to be shortened |
 
 #### Example: Create
 

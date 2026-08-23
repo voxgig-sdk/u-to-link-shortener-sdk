@@ -87,9 +87,9 @@ link_shortening = client.LinkShortening()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `original_url` | `str` | No |  |
-| `short_link` | `str` | No |  |
-| `url` | `str` | Yes |  |
+| `original_url` | `str` | No | The original URL that was shortened |
+| `short_link` | `str` | No | The shortened URL |
+| `url` | `str` | Yes | The URL to be shortened |
 
 ### Operations
 

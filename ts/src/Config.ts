@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'UToLinkShortener',
+        slug: "u-to-link-shortener",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,15 +67,18 @@ class Config {
       "fields": [
         {
           "name": "original_url",
+          "short": "The original URL that was shortened",
           "type": "`$STRING`"
         },
         {
           "name": "short_link",
+          "short": "The shortened URL",
           "type": "`$STRING`"
         },
         {
           "name": "url",
           "req": true,
+          "short": "The URL to be shortened",
           "type": "`$STRING`"
         }
       ],

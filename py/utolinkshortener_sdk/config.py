@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "UToLinkShortener",
+            "slug": "u-to-link-shortener",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,15 +53,18 @@ def make_config():
         "fields": [
           {
             "name": "original_url",
+            "short": "The original URL that was shortened",
             "type": "`$STRING`",
           },
           {
             "name": "short_link",
+            "short": "The shortened URL",
             "type": "`$STRING`",
           },
           {
             "name": "url",
             "req": True,
+            "short": "The URL to be shortened",
             "type": "`$STRING`",
           },
         ],

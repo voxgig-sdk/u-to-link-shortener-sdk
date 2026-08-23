@@ -36,18 +36,21 @@
               "active": true,
               "name": "original_url",
               "req": false,
+              "short": "The original URL that was shortened",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "short_link",
               "req": false,
+              "short": "The shortened URL",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": true,
+              "short": "The URL to be shortened",
               "type": "`$STRING`"
             }
           ],
