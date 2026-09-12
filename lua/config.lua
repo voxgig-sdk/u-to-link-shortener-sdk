@@ -32,16 +32,19 @@ local function make_config()
       ["link_shortening"] = {
         ["fields"] = {
           {
+            ["format"] = "uri",
             ["name"] = "original_url",
             ["short"] = "The original URL that was shortened",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "short_link",
             ["short"] = "The shortened URL",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "url",
             ["req"] = true,
             ["short"] = "The URL to be shortened",
@@ -59,13 +62,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/shorten/",
-                ["parts"] = {
-                  "shorten",
+                ["segments"] = {
+                  {
+                    ["lit"] = "shorten",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "shorten",
                 },
               },
             },

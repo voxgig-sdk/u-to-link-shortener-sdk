@@ -36,16 +36,19 @@ func MakeConfig() map[string]any {
 			"link_shortening": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "uri",
 						"name": "original_url",
 						"short": "The original URL that was shortened",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "short_link",
 						"short": "The shortened URL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "url",
 						"req": true,
 						"short": "The URL to be shortened",
@@ -63,13 +66,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/shorten/",
-								"parts": []any{
-									"shorten",
+								"segments": []any{
+									map[string]any{
+										"lit": "shorten",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"shorten",
 								},
 							},
 						},
@@ -81,6 +89,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

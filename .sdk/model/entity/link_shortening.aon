@@ -6,18 +6,21 @@ main: kit: entity: link_shortening: {
 
   fields: [
     {
+      format: "uri"
       name: "original_url"
       req: false
       short: "The original URL that was shortened"
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "short_link"
       req: false
       short: "The shortened URL"
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: true
       short: "The URL to be shortened"
@@ -33,8 +36,10 @@ main: kit: entity: link_shortening: {
         {
           method: "POST"
           orig: "/shorten/"
-          parts: [
-            "shorten"
+          segments: [
+            {
+              lit: "shorten"
+            }
           ]
           transform: {
             req: "`reqdata`"
