@@ -107,7 +107,7 @@ local result, err = client:LinkShortening():create({ url = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/releases) |
+| TypeScript | `@voxgig-sdk/u-to-link-shortener-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/releases) |
 | Python | `voxgig-sdk-u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/releases) |
 | PHP | `voxgig-sdk/u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/u-to-link-shortener-sdk/go` | `go get github.com/voxgig-sdk/u-to-link-shortener-sdk/go@latest` |
@@ -121,7 +121,7 @@ local result, err = client:LinkShortening():create({ url = "example" })
 ### TypeScript
 
 ```ts
-import { UToLinkShortenerSDK } from '@voxgig-sdk/u-to-link-shortener'
+import { UToLinkShortenerSDK } from '@voxgig-sdk/u-to-link-shortener-sdk'
 
 const client = new UToLinkShortenerSDK()
 

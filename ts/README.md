@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { UToLinkShortenerSDK } from '@voxgig-sdk/u-to-link-shortener'
+import { UToLinkShortenerSDK } from '@voxgig-sdk/u-to-link-shortener-sdk'
 
 const client = new UToLinkShortenerSDK()
 ```
@@ -404,7 +404,7 @@ u-to-link-shortener/
 Import the SDK from the package root:
 
 ```ts
-import { UToLinkShortenerSDK } from '@voxgig-sdk/u-to-link-shortener'
+import { UToLinkShortenerSDK } from '@voxgig-sdk/u-to-link-shortener-sdk'
 ```
 
 ### Entity state
