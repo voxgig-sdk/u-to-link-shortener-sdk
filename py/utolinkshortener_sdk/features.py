@@ -1,12 +1,18 @@
 # UToLinkShortener SDK feature factory
 
 from utolinkshortener_sdk.feature.base_feature import UToLinkShortenerBaseFeature
+from utolinkshortener_sdk.feature.ratelimit_feature import UToLinkShortenerRatelimitFeature
+from utolinkshortener_sdk.feature.retry_feature import UToLinkShortenerRetryFeature
 from utolinkshortener_sdk.feature.test_feature import UToLinkShortenerTestFeature
+from utolinkshortener_sdk.feature.timeout_feature import UToLinkShortenerTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: UToLinkShortenerBaseFeature(),
+    "ratelimit": lambda: UToLinkShortenerRatelimitFeature(),
+    "retry": lambda: UToLinkShortenerRetryFeature(),
     "test": lambda: UToLinkShortenerTestFeature(),
+    "timeout": lambda: UToLinkShortenerTimeoutFeature(),
 }
 
 
