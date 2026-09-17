@@ -107,12 +107,12 @@ local result, err = client:LinkShortening():create({ url = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/u-to-link-shortener-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/releases) |
-| Python | `voxgig-sdk-u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/releases) |
-| PHP | `voxgig-sdk/u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/releases) |
+| TypeScript | `@voxgig-sdk/u-to-link-shortener-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/tags) |
+| Python | `voxgig-sdk-u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/tags) |
+| PHP | `voxgig-sdk/u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/u-to-link-shortener-sdk/go` | `go get github.com/voxgig-sdk/u-to-link-shortener-sdk/go@latest` |
-| Ruby | `voxgig-sdk-u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/releases) |
-| Lua | `voxgig-sdk-u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/releases) |
+| Ruby | `voxgig-sdk-u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/tags) |
+| Lua | `voxgig-sdk-u-to-link-shortener` | publish pending — [install from git tag](https://github.com/voxgig-sdk/u-to-link-shortener-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/u-to-link-shortener-sdk/go-cli` | `go install github.com/voxgig-sdk/u-to-link-shortener-sdk/go-cli/cmd/u-to-link-shortener@latest` |
 | Go MCP server | `github.com/voxgig-sdk/u-to-link-shortener-sdk/go-mcp` | `go get github.com/voxgig-sdk/u-to-link-shortener-sdk/go-mcp@latest` |
 

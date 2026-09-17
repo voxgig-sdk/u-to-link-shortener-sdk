@@ -127,9 +127,9 @@ class Config {
 
     entity: {
       
-      link_shortening: {
-      },
-
+        link_shortening: {
+        },
+  
     }
   }
 
