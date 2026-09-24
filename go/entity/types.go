@@ -1,7 +1,7 @@
 // Typed models for the UToLinkShortener SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,9 +14,6 @@ import (
 
 // LinkShortening is the typed data model for the link_shortening entity.
 type LinkShortening struct {
-	OriginalUrl *string `json:"original_url,omitempty"`
-	ShortLink *string `json:"short_link,omitempty"`
-	Url string `json:"url"`
 }
 
 // LinkShorteningCreateData is the typed request payload for LinkShortening.CreateTyped.

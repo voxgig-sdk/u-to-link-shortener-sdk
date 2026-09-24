@@ -90,23 +90,26 @@ func MakeConfig() map[string]any {
 			"link_shortening": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "uri",
 						"name": "original_url",
+						"title": "Original Url",
+						"type": "`$STRING`",
 						"short": "The original URL that was shortened",
-						"type": "`$STRING`",
+						"format": "uri",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "short_link",
-						"short": "The shortened URL",
+						"title": "Short Link",
 						"type": "`$STRING`",
+						"short": "The shortened URL",
+						"format": "uri",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "url",
+						"title": "Url",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The URL to be shortened",
-						"type": "`$STRING`",
+						"format": "uri",
 					},
 				},
 				"name": "link_shortening",
@@ -116,7 +119,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/shorten/",
@@ -125,14 +127,16 @@ func MakeConfig() map[string]any {
 										"lit": "shorten",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"shorten",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"shorten",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

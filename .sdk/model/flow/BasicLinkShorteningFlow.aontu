@@ -1,0 +1,18 @@
+# BasicLinkShorteningFlow
+
+main: kit: flow: BasicLinkShorteningFlow:
+{
+  entity: "link_shortening",
+  kind: "basic",
+  name: "BasicLinkShorteningFlow",
+  step: [
+    {
+      i: {
+        ref: "link_shortening_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicLinkShorteningFlow"
+}

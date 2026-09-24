@@ -112,23 +112,26 @@ class UToLinkShortenerConfig
         'link_shortening' => [
           'fields' => [
             [
-              'format' => 'uri',
               'name' => 'original_url',
+              'title' => 'Original Url',
+              'type' => '`$STRING`',
               'short' => 'The original URL that was shortened',
-              'type' => '`$STRING`',
+              'format' => 'uri',
             ],
             [
-              'format' => 'uri',
               'name' => 'short_link',
-              'short' => 'The shortened URL',
+              'title' => 'Short Link',
               'type' => '`$STRING`',
+              'short' => 'The shortened URL',
+              'format' => 'uri',
             ],
             [
-              'format' => 'uri',
               'name' => 'url',
+              'title' => 'Url',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'The URL to be shortened',
-              'type' => '`$STRING`',
+              'format' => 'uri',
             ],
           ],
           'name' => 'link_shortening',
@@ -138,7 +141,6 @@ class UToLinkShortenerConfig
               'name' => 'create',
               'points' => [
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/shorten/',
@@ -147,14 +149,16 @@ class UToLinkShortenerConfig
                       'lit' => 'shorten',
                     ],
                   ],
-                  'select' => [],
+                  'parts' => [
+                    'shorten',
+                  ],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'parts' => [
-                    'shorten',
-                  ],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],
