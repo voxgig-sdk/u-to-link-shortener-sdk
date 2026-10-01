@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 UToLinkShortenerUtility.registrar = ->(u) {
   u.clean = UToLinkShortenerUtilities::Clean
+  u.clean_add = UToLinkShortenerUtilities::CleanAdd
+  u.clean_explain = UToLinkShortenerUtilities::CleanExplain
   u.done = UToLinkShortenerUtilities::Done
   u.make_error = UToLinkShortenerUtilities::MakeError
   u.feature_add = UToLinkShortenerUtilities::FeatureAdd

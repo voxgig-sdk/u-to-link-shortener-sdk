@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 UToLinkShortenerUtility::setRegistrar(function (UToLinkShortenerUtility $u): void {
     $u->clean = [UToLinkShortenerClean::class, 'call'];
+    $u->clean_add = [UToLinkShortenerClean::class, 'add'];
+    $u->clean_explain = [UToLinkShortenerDone::class, 'clean_explain'];
     $u->done = [UToLinkShortenerDone::class, 'call'];
     $u->make_error = [UToLinkShortenerMakeError::class, 'call'];
     $u->feature_add = [UToLinkShortenerFeatureAdd::class, 'call'];
