@@ -18,8 +18,6 @@ type LinkShortening struct {
 
 // LinkShorteningCreateData is the typed request payload for LinkShortening.CreateTyped.
 type LinkShorteningCreateData struct {
-	OriginalUrl *string `json:"original_url,omitempty"`
-	ShortLink *string `json:"short_link,omitempty"`
 	Url string `json:"url"`
 }
 

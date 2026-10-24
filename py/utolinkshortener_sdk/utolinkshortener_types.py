@@ -25,10 +25,5 @@ class LinkShortening(LinkShorteningRequired, total=False):
     short_link: str
 
 
-class LinkShorteningCreateDataRequired(TypedDict):
+class LinkShorteningCreateData(TypedDict):
     url: str
-
-
-class LinkShorteningCreateData(LinkShorteningCreateDataRequired, total=False):
-    original_url: str
-    short_link: str

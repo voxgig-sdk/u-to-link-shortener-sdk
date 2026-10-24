@@ -27,17 +27,9 @@ LinkShortening = Struct.new(
 
 # Request payload for LinkShortening#create.
 #
-# @!attribute [rw] original_url
-#   @return [String, nil]
-#
-# @!attribute [rw] short_link
-#   @return [String, nil]
-#
 # @!attribute [rw] url
 #   @return [String]
 LinkShorteningCreateData = Struct.new(
-  :original_url,
-  :short_link,
   :url,
   keyword_init: true
 )

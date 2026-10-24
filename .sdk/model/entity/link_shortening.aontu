@@ -37,6 +37,9 @@ main: kit: entity: link_shortening: {
       name: "create"
       points: [
         {
+          bf: [
+            "url"
+          ]
           co: {
             id: "POST /shorten/"
             source: "openapi3"
@@ -44,6 +47,10 @@ main: kit: entity: link_shortening: {
           }
           m: "POST"
           o: "/shorten/"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "shorten"

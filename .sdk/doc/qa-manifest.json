@@ -3,5 +3,15 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Production server",
+      "Successfully shortened the URL",
+      "The URL to be shortened",
+      "The original URL that was shortened",
+      "The shortened URL",
+      "The u.to API provides a simple and efficient way to shorten any URL into a concise link. It enables users to create short links with minimal latency, improving the sharing experience."
+    ]
+  }
 }

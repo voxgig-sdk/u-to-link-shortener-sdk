@@ -12,8 +12,6 @@ export interface LinkShortening {
 }
 
 export interface LinkShorteningCreateData {
-  original_url?: string
-  short_link?: string
   url: string
 }
 

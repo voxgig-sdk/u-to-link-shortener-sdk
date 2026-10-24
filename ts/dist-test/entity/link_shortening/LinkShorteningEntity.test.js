@@ -54,6 +54,14 @@ const utility_1 = require("../../utility");
         const ent = testsdk.LinkShortening();
         (0, node_assert_1.default)(null != ent);
     });
+    (0, node_test_1.test)('validate', async (t) => {
+        if (null == __1.config.feature?.validate) {
+            t.skip('feature not present in this SDK: validate');
+            return;
+        }
+        const client = __1.UToLinkShortenerSDK.test(undefined, { feature: { validate: { active: true } } });
+        await node_assert_1.default.rejects(client.LinkShortening().create({ "url": 1 }), (err) => 'validate_failed' === err.code);
+    });
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.U_TO_LINK_SHORTENER_TEST_LIVE;
         for (const op of ['create']) {
@@ -62,7 +70,7 @@ const utility_1 = require("../../utility");
         }
         const setup = basicSetup();
         if (setup.live) {
-            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "original_url": { "a": true, "fo": "uri", "h": "Original Url", "n": "original_url", "r": false, "sh": "The original URL that was shortened", "t": "`$STRING`", "key$": "original_url", "index$": 0 }, "short_link": { "a": true, "fo": "uri", "h": "Short Link", "n": "short_link", "r": false, "sh": "The shortened URL", "t": "`$STRING`", "key$": "short_link", "index$": 1 }, "url": { "a": true, "fo": "uri", "h": "Url", "n": "url", "r": true, "sh": "The URL to be shortened", "t": "`$STRING`", "key$": "url", "index$": 2 } }, "name": "link_shortening", "op": { "create": { "input": "data", "name": "create", "points": [{ "a": true, "co": { "id": "POST /shorten/", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "POST", "o": "/shorten/", "q": {}, "r": {}, "s": [{ "lit": "shorten" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "create" } }, "relations": { "ancestors": [] }, "key$": "link_shortening", "name__orig": "link_shortening", "Name": "LinkShortening", "name_": "link_shortening", "name-": "link-shortening", "NAME": "LINK_SHORTENING", "index$": 0 }, { "active": true, "entity": "link_shortening", "key$": "BasicLinkShorteningFlow", "kind": "basic", "name": "BasicLinkShorteningFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": { "ref": "link_shortening_ref01" }, "m": {}, "o": "create", "s": [], "v": [], "index$": 0 }] }, 'LinkShortening', { "POST /shorten/": { "protocol": "http", "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["url"], "properties": { "url": { "type": "string", "format": "uri", "description": "The URL to be shortened", "example": "http://tvs.tv", "key$": "url" } }, "index$": 1 }, "examples": { "basic": { "summary": "Basic URL shortening", "value": { "url": "http://tvs.tv" } } } } } }, "parameters": [] } });
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "original_url": { "a": true, "fo": "uri", "h": "Original Url", "n": "original_url", "r": false, "sh": "The original URL that was shortened", "t": "`$STRING`", "key$": "original_url", "index$": 0 }, "short_link": { "a": true, "fo": "uri", "h": "Short Link", "n": "short_link", "r": false, "sh": "The shortened URL", "t": "`$STRING`", "key$": "short_link", "index$": 1 }, "url": { "a": true, "fo": "uri", "h": "Url", "n": "url", "r": true, "sh": "The URL to be shortened", "t": "`$STRING`", "key$": "url", "index$": 2 } }, "name": "link_shortening", "op": { "create": { "input": "data", "name": "create", "points": [{ "a": true, "bf": ["url"], "co": { "id": "POST /shorten/", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "POST", "o": "/shorten/", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "shorten" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "create" } }, "relations": { "ancestors": [] }, "key$": "link_shortening", "name__orig": "link_shortening", "Name": "LinkShortening", "name_": "link_shortening", "name-": "link-shortening", "NAME": "LINK_SHORTENING", "index$": 0 }, { "active": true, "entity": "link_shortening", "key$": "BasicLinkShorteningFlow", "kind": "basic", "name": "BasicLinkShorteningFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": { "ref": "link_shortening_ref01" }, "m": {}, "o": "create", "s": [], "v": [], "index$": 0 }] }, 'LinkShortening', { "POST /shorten/": { "protocol": "http", "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["url"], "properties": { "url": { "type": "string", "format": "uri", "description": "The URL to be shortened", "example": "http://tvs.tv", "key$": "url" } }, "index$": 1 }, "examples": { "basic": { "summary": "Basic URL shortening", "value": { "url": "http://tvs.tv" } } } } } }, "parameters": [] } }, { strict: LIVE_STRICT, t });
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -75,6 +83,11 @@ const utility_1 = require("../../utility");
         (0, node_assert_1.default)(null != link_shortening_ref01_data);
     });
 });
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true;
 function basicSetup(extra) {
     // TODO: fix test def options
     const options = {}; // null

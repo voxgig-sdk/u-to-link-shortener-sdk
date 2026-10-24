@@ -12,8 +12,6 @@
 ---@field url string
 
 ---@class LinkShorteningCreateData
----@field original_url? string
----@field short_link? string
 ---@field url string
 
 local M = {}

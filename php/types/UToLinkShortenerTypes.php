@@ -23,8 +23,6 @@ class LinkShortening
 /** Request payload for LinkShortening#create. */
 class LinkShorteningCreateData
 {
-    public ?string $original_url = null;
-    public ?string $short_link = null;
     public string $url;
 }
 
